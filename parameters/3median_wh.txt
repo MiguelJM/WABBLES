@@ -1,0 +1,5 @@
+#WABBLES V3, N1=3,N3=4,wavelet_name=mexHatphi_name=tanh,alpha=0.001,classification_threshold=0.5,GDEs=5,inverted_LCs=False,training_error=1027784.9166590594
+0.42493632436653367
+0.27071963994338666
+0.21669216034346553
+0.30991208602905823
