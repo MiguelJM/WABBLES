@@ -393,11 +393,11 @@ def calculate_t_derivative(we, c, d, x, t, be_deriv, psi, wavelet_name):
 
 """
 Derivative of the Gaussian Derivative wavelet w.r.t the translation parameter (t)
-     t' = err * we * (e^(-.5 * c^2) * (d^2*(x-t)) ) * (1/c + c) * (1 + phi'_i * wh)
+     t' = err * we * (e^(-.5 * c^2) * (d^2*(x-t)) ) * (1/c - c) * (1 + phi'_i * wh)
 """
 def gausD_t_derivative(we, c, d, x, t, be_deriv):
     t_deriv = we * be_deriv
-    t_deriv = t_deriv * (1/c + c)
+    t_deriv = t_deriv * (1/c - c)
     t_deriv = t_deriv * (np.exp(-0.5 * np.power(c, 2)))
     t_deriv = t_deriv * (np.power(d, 2) * (x - t))
     
@@ -671,6 +671,7 @@ def wabbles(train_x, train_y, test_x, test_y, N1, N3, err_threshold, gradient_de
     time_start=time.time()
     TrainingAccuracy = 0
     Training_time = 0
+    last_acc_obtained = 0 #Used for automatic parameter saving
     
     print(parameters_path)
     if load_parameters: # Use previously save parameters or initialize them?
@@ -687,7 +688,6 @@ def wabbles(train_x, train_y, test_x, test_y, N1, N3, err_threshold, gradient_de
         total_err = 100
         n_epochs = 0
         y_estimated = np.zeros(no_samples)
-        last_acc_obtained = 0 #Used for automatic parameter saving
 
         print("Training the mapping and enhancement nodes.")
 
