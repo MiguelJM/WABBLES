@@ -578,6 +578,12 @@ def test_model(test_x, test_y, t, d, we, be, wh, bh, N1, N3, wavelet_name, phi_n
     unknown = 0
 
     for i in range(0, len(y_test_estimated)):
+        if y_test_estimated[i] > 1:
+            y_test_estimated[i] = 1
+                
+        if y_test_estimated[i] < 0:
+            y_test_estimated[i] = 0
+            
         if y_test_estimated[i] < class_threshold:
             y_test_estimated[i] = 0
         else:
@@ -771,6 +777,12 @@ def wabbles(train_x, train_y, test_x, test_y, N1, N3, err_threshold, gradient_de
         ### Training Accuracy
         cnt = 0;
         for i in range(0, len(y_estimated)):
+            if y_estimated[i] > 1:
+                y_estimated[i] = 1
+                
+            if y_estimated[i] < 0:
+                y_estimated[i] = 0
+
             if y_estimated[i] < class_threshold:
                 y_estimated[i] = 0
             else:
