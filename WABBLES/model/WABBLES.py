@@ -733,7 +733,7 @@ def wabbles(train_x, train_y, test_x, test_y, N1, N3, err_threshold, gradient_de
                 del H;
                 del Z;
 
-            total_err = 0.5 * sum(total_err ** 2)
+            total_err = 0.5 * sum(total_err ** 2) / no_samples
 
             print(color.BOLD + "\n\n\n__________________________________________________________________________" +
                                 "\nTraining epoch " + str(n_epochs) + " error was " + str(total_err) + "." + color.END)
