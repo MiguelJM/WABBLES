@@ -4,6 +4,8 @@ WAvelet-Based Broad LEarning System - WABBLES
 
 The WABBLES model inherits its name from stellar wobbles, wavelets and the Broad Learning System model.
 
+
+_____________________________________________________________________________________
 Please cite https://doi.org/10.1016/j.engappai.2022.104886 if you use this work.
 
 Miguel Jara-Maldonado, Vicente Alarcon-Aquino, Roberto Rosas-Romero,
